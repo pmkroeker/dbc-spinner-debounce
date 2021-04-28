@@ -41,12 +41,24 @@ app.layout = dbc.Container(
 
 @app.callback(
     Output("chart1", "fig"),
+    Input("trigger", "n_clicks")
+)
+def callback(n):
+    return fig
+
+@app.callback(
     Output("chart2", "fig"),
+    Input("trigger", "n_clicks")
+)
+def callback(n):
+    return fig
+
+@app.callback(
     Output("chart3", "fig"),
     Input("trigger", "n_clicks")
 )
 def callback(n):
-    return fig, fig, fig
+    return fig
 
 
 if __name__ == "__main__":
